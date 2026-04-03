@@ -1,0 +1,151 @@
+.home {
+    .intro {
+        height: 35rem;
+        display: flex;
+        width: 100%;
+        background-color: #022a4e;
+        mask-image: linear-gradient(to top, transparent 0%, black 10%);
+
+        .tag-line {
+            width: 40%;
+            align-content: center;
+            margin-bottom: 5rem;
+
+            .heading {
+                display: flex;
+                flex-direction: column;
+                margin-left: 1rem;
+
+                .main-heading {
+                    font-size: xx-large;
+                    color: white;
+                }
+
+                .sub-heading {
+                    font-size: larger;
+                    color: white;
+                }
+            }
+        }
+
+        .picture {
+            width: 65%;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 50%);
+            mask-image: linear-gradient(to right, transparent 0%, black 50%);
+
+            img {
+                width: 100%;
+                height: 35rem;
+            }
+        }
+    }
+    .achievement{
+    .achievement-section {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 0.05rem solid rgb(43, 43, 43);
+        border-width: 80%;
+        padding: 3rem 0;
+
+        /* Crescent gradient */
+        background: radial-gradient(circle at 10% 50%,
+                /* push to extreme edge */
+                rgba(2, 42, 78, 0) 10%,
+                /* strong at edge */
+                rgba(2, 42, 78, 0.3) 40%,
+                rgba(2, 42, 78, 0.6) 40%
+                /* fade OUTWARD */
+            );
+        border-radius: 0.75rem;
+        mask-image: linear-gradient(to top, transparent 0%, black 10%);
+        mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+
+        .achieve-heading {
+            display: flex;
+            justify-content: left;
+            margin: 0 0 1rem 0;
+            font-size: xx-large;
+            font-weight: 700;
+        }
+        .achieve-content {
+            display: flex;
+            justify-content: left;
+            margin: 1rem 0;
+            font-size: x-large;
+            font-weight: 700;
+        }
+    }
+    .achieve-image{
+        position: absolute;
+    right: 8rem;
+    top: 46rem;
+    }
+}
+
+    .services {
+        display: flex;
+        flex-direction: column;
+
+        .serv-heading {
+            width: 100%;
+            font-size: 5ch;;
+            justify-content: center;
+            font-weight: 700;
+            margin: 1rem 0;
+            padding: 1rem 0;
+            display: flex;
+            span{
+                border-bottom: 0.25rem solid rgb(192, 173, 5) ;
+            }
+        }
+
+        .serv-content {
+            display: flex;
+            flex-direction: column;
+            .serv-descrip{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                font-size: large;
+                align-items: center;
+                span{
+                    width: 45%;
+                }
+            }
+            width: 100%;
+        }
+    }
+    .practises{
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        .prac-heading{
+            margin: 4rem 0 3rem 0;
+            font-size: 5ch;
+            font-weight: 700;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+             span{
+                border-bottom: 0.25rem solid rgb(192, 173, 5) ;
+            }
+        }
+        .prac-content{
+            display: flex;
+           
+            .prac-item{
+                 width: 25%;
+            border: 0.25rem solid  #022a4e;;
+            font-size: x-large;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            margin: 0 0.5rem;
+            height: 5rem;
+            }
+            
+        }
+    }
+}

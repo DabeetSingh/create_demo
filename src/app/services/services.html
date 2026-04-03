@@ -1,0 +1,23 @@
+<div class="service_container">
+    <div class="concrte_tab">
+        @for(pics of folder; track $index ){
+             <div class="service_heading">
+            {{serviceHeading[$index]}}
+        </div>
+        <div class="serive_content">
+            <div class="carousel-container">
+                <button class="nav-btn left" (click)="prev($index, pics)">&#10094;</button>
+
+                <div class="carousel">
+                    <div class="card" *ngFor="let img of pics; let i = index" [ngStyle]="getStyle($index, i, pics)">
+                        <img [src]="img" />
+                    </div>
+                </div>
+
+                <button class="nav-btn right" (click)="next($index, pics)">&#10095;</button>
+            </div>
+        </div>
+        }
+    </div>
+
+</div>
