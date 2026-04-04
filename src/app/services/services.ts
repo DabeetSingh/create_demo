@@ -49,11 +49,10 @@ export class Services {
   ]
 
   imgMedia = [
-    ' assets/images/Media_1.jpeg',
+    'assets/images/Media_1.jpeg',
     'assets/images/Media_2.jpeg',
     'assets/images/Media_3.jpeg',
     'assets/images/Media_4.jpeg',
-    'assets/images/Media_5.jpeg',
     'assets/images/Media_6.jpeg',
     'assets/images/Media_7.jpeg',
     'assets/images/Media_8.jpeg',
@@ -80,28 +79,26 @@ export class Services {
 
   getStyle(listIndex: number, i: number, imgArray: string[]) {
     const pos = this.getPosition(listIndex, i, imgArray);
-    if (Math.abs(pos) > 1) {
-      return {
-        display: 'none'
-      };
+
+    if (Math.abs(pos) > 2) {
+      return { display: 'none' };
     }
+
     const translateZ = -Math.abs(pos) * 250;
     const translateX = pos * 300;
     const rotateY = pos * -50;
     const scale = pos === 0 ? 1 : 0.75;
-    const blur = Math.abs(pos) > 1 ? 4 : 0;
-    const opacity = Math.abs(pos) > 2 ? 0 : 1;
 
     return {
       transform: `
+      translateX(-50%)
       translateX(${translateX}px)
       translateZ(${translateZ}px)
       rotateY(${rotateY}deg)
       scale(${scale})
     `,
       zIndex: 100 - Math.abs(pos),
-      filter: `blur(${blur}px)`,
-      opacity: opacity,
+      opacity: Math.abs(pos) > 2 ? 0 : 1,
       transition: 'all 0.6s ease'
     };
   }

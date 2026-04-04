@@ -5,22 +5,62 @@
   <div class="text">
     SHUKRANA
   </div>
+  @if(!isMobile){
   <div class="tabs">
-    <div class="tab-item">
+    <div class="tab-item" routerLink="" routerLinkActive="true">
       Home
     </div>
-    <div class="tab-item">
-      Services
-    </div>
-    <div class="tab-item">
+    <div class="tab-item" routerLink="/about" routerLinkActive="true">
       About
     </div>
-    <div class="tab-item">
+    <div class="tab-item" routerLink="/FAQs" routerLinkActive="true">
+      FAQs
+    </div>
+    <div class="tab-item" routerLink="/contact" routerLinkActive="true">
       Contact Us
     </div>
   </div>
+  } @else {
+  <div class="menu-icon" (click)="toggleMenu()">
+    ☰
+  </div>
+
+  <div class="tabs" [class.active]="isMenuOpen">
+    <div class="tab-item">
+      <div routerLink="" routerLinkActive="true">
+        Home
+      </div>
+    </div>
+    <div class="tab-item">
+      <div routerLink="/about" routerLinkActive="true">
+        About
+      </div>
+    </div>
+    <div class="tab-item">
+      <div routerLink="/FAQs" routerLinkActive="true">
+        FAQs
+      </div>
+    </div>
+    <div class="tab-item">
+      <div routerLink="/contact" routerLinkActive="true">
+        Contact Us
+      </div>
+    </div>
+  </div>
+  }
 </div>
 <router-outlet></router-outlet>
 <div class="footer">
+  <div class="comp-detaiils">
+    <div class="text">
+      SHUKRANA
+    </div>
+    <div class="timing">
+      Mon - Sat 8:00 - 17:30,
+    </div>
+    <div class="timing">
+      Sunday - CLOSED
+    </div>
+  </div>
 
 </div>

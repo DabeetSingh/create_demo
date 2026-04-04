@@ -1,6 +1,10 @@
 .service_container {
-    display: flex;
+    position: relative;
     width: 100%;
+    margin: auto;
+    perspective: 1200px;
+    overflow: hidden;
+    /* prevents side cut issues */
 
     .concrte_tab {
         display: flex;
@@ -9,38 +13,23 @@
         margin-left: 1rem;
 
         .service_heading {
-            display: flex;
-            font-size: xx-large;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
             font-weight: 700;
-            justify-content: center;
-            align-items: flex-start;
-            margin: 3rem 0 1rem 0;
+            text-align: center;
+            margin: 2rem 0 1rem 0;
         }
 
         .serive_content {
-            display: flex;
             width: 100%;
 
             .carousel-container {
                 position: relative;
-                width: 100vw;
+                width: 100%;
                 margin: auto;
                 perspective: 1000px;
+                overflow: hidden;
             }
 
-            /* Wrapper */
-            .carousel-wrapper {
-                position: relative;
-                width: 100%;
-            }
-
-            /* Carousel container */
-            .carousel-container {
-                width: 100%;
-                perspective: 1200px;
-            }
-
-            /* Buttons */
             .nav-btn {
                 position: absolute;
                 top: 50%;
@@ -49,48 +38,88 @@
                 background: rgba(0, 0, 0, 0.6);
                 color: white;
                 border: none;
-                padding: 0.8rem 1.2rem;
-                font-size: 2rem;
+                padding: 0.5rem 0.8rem;
+                font-size: 1.5rem;
                 cursor: pointer;
                 border-radius: 50%;
             }
 
-            /* Left */
             .nav-btn.left {
-                left: 1rem;
+                left: 2rem;
             }
 
-            /* Right */
             .nav-btn.right {
-                right: 1rem;
-            }
-
-            /* Hover effect */
-            .nav-btn:hover {
-                background: black;
+                right: 2rem;
             }
 
             .carousel {
                 position: relative;
-                height: 50vh;
+                height: 400px;
+                /* fixed height for stability */
+                width: 100%;
                 transform-style: preserve-3d;
-                width: 90vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
 
             .card {
                 position: absolute;
                 top: 0;
-                left: 25%;
-                transform-origin: center center;
+                left: 50%;
+                transform: translateX(-50%);
                 transition: transform 0.5s ease, filter 0.5s;
             }
 
             .card img {
-                width: 50rem;
-                height: 25rem;
+                width: 70vw;
+                max-width: 900px;
+                height: 400px;
                 object-fit: cover;
-                border-radius: 10px;
+                border-radius: 12px;
             }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .service_heading {
+        font-size: 2rem;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .card img {
+        width: 90vw;
+        height: 300px;
+    }
+
+    .nav-btn {
+        font-size: 1.5rem;
+        padding: 0.4rem 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service_heading {
+        font-size: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .carousel {
+        height: 220px;
+    }
+
+    .card img {
+        width: 95vw;
+        height: 220px;
+        border-radius: 8px;
+    }
+
+    .nav-btn {
+        font-size: 1.2rem;
+        padding: 0.3rem 0;
     }
 }

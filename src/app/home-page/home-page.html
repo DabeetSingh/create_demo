@@ -16,32 +16,21 @@
     </div>
     <div class="achievement">
         <div class="achievement-section">
-            <div class="achieve-heading">
-                Building Trust Through Results:
+            <div class="achieve-text">
+                <div class="achieve-heading">
+                    {{achievementData.heading}}
+                </div>
+                @for (point of achievementData.points; track $index) {
+                <div class="achieve-content">
+                    <mat-icon fontSet="material-symbols-outlined">check</mat-icon>
+                    <span>{{ point }}</span>
+                </div>
+                }
             </div>
-            <div class="achieve-content">
-                <mat-icon fontSet="material-symbols-outlined">check</mat-icon>
-                Trusted By 200+ clients
+
+            <div class="achieve-image">
+                <img src="assets/images/exterior_main.jpeg" alt="Demo" height="345" width="550">
             </div>
-            <div class="achieve-content">
-                <mat-icon fontSet="material-symbols-outlined">check</mat-icon>
-                Successfully delivered 500+ Projects
-            </div>
-            <div class="achieve-content">
-                <mat-icon fontSet="material-symbols-outlined">check</mat-icon>
-                50+ Years of Excellence in Construction
-            </div>
-            <div class="achieve-content">
-                <mat-icon fontSet="material-symbols-outlined">check</mat-icon>
-                1520+ Colleagues & counting more daily
-            </div>
-            <div class="achieve-content">
-                <mat-icon fontSet="material-symbols-outlined">check</mat-icon>
-                1120+ Revenue in 2017 investment
-            </div>
-        </div>
-        <div class="achieve-image" >
-            <img src="assets/images/exterior_main.jpeg" alt="Demo" height="345" width="550">
         </div>
     </div>
 
@@ -51,7 +40,8 @@
         </div>
         <div class="serv-content">
             <div class="serv-descrip">
-                <span>We offer a wide range of construction services designed to meet diverse project needs with quality, precision, and reliability. Explore our key areas of expertise below:</span>
+                <span>We offer a wide range of construction services designed to meet diverse project needs with
+                    quality, precision, and reliability. Explore our key areas of expertise below:</span>
             </div>
             <app-services></app-services>
         </div>
@@ -62,9 +52,9 @@
         </div>
         <div class="prac-content">
             @for(practise of practises; track $index){
-                <div class="prac-item">
-                    {{practise}}
-                </div>
+            <div class="prac-item">
+                {{practise}}
+            </div>
             }
         </div>
 

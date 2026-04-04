@@ -1,9 +1,10 @@
-.header{
+.header {
     display: flex;
     height: 6rem;
     background-color: #00294d;
     width: 100%;
-    .text{
+
+    .text {
         display: flex;
         align-items: center;
         justify-content: left;
@@ -13,20 +14,123 @@
         margin: 0 1rem;
 
     }
-    .tabs{
+
+    .tabs {
         display: flex;
         align-items: center;
         justify-content: right;
         width: 50%;
         color: white;
         font-size: large;
-        .tab-item{
+
+        .tab-item {
             margin: 0 1rem;
+            cursor: pointer;
         }
     }
 }
-.footer{
+
+.footer {
     height: 20rem;
     width: 100%;
     background-color: #00294d;
+
+    .comp-detaiils {
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 50%;
+            color: white;
+            font-size: xx-large;
+            padding: 2rem;
+
+        }
+
+        .timing {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 50%;
+            color: white;
+            font-size: larger;
+            padding: 0 2rem;
+        }
+    }
+}
+
+/* ================= MOBILE ONLY ================= */
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        height: 6rem;
+        background-color: #00294d;
+        width: 100%;
+
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            width: 50%;
+            color: white;
+            font-size: xx-large;
+            margin: 1rem 1rem;
+
+        }
+
+        /* Show hamburger */
+        .menu-icon {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            width: 50%;
+            color: white;
+            font-size: large;
+        }
+    }
+
+
+
+    /* Adjust header layout */
+    .header {
+        flex-wrap: wrap;
+        height: 3.8rem;
+        border: none;
+    }
+
+    .header .text {
+        padding: 0 1rem;
+        width: 30%;
+        font-size: 1.5rem;
+    }
+
+    /* Hide tabs initially */
+    .header .tabs {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: #00294d;
+    }
+
+    /* Show dropdown when active */
+    .header .tabs.active {
+        display: flex;
+        z-index: 2;
+    }
+
+    .header .tabs .tab-item {
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* ================= DESKTOP (NO CHANGE) ================= */
+
+/* Hide hamburger on desktop */
+@media (min-width: 769px) {
+    .menu-icon {
+        display: none;
+    }
 }

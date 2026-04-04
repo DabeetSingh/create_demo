@@ -1,0 +1,27 @@
+<div class="accordion">
+    <div class="ques-title">
+        FAQs
+
+    </div>
+    @for( item of faqs; track $index){
+    <div class="accordion-item">
+
+        <!-- HEADER -->
+        <div class="accordion-header" (click)="toggle($index)">
+            <span>{{ item.question }}</span>
+            <span class="icon">
+                {{ item.open ? '−' : '+' }}
+            </span>
+        </div>
+
+        <!-- CONTENT -->
+        @if(item.open){
+        <div class="accordion-body">
+            <p>{{ item.answer }}</p>
+        </div>
+        }
+
+    </div>
+    }
+
+</div>

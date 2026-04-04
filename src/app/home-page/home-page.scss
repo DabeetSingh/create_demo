@@ -39,48 +39,81 @@
             }
         }
     }
-    .achievement{
+
+    .achievement {
+        .achievement-section {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 0.05rem solid rgb(43, 43, 43);
+            border-width: 80%;
+            padding: 3rem 0;
+
+            /* Crescent gradient */
+            background: radial-gradient(circle at 10% 50%,
+                    /* push to extreme edge */
+                    rgba(2, 42, 78, 0) 10%,
+                    /* strong at edge */
+                    rgba(2, 42, 78, 0.3) 40%,
+                    rgba(2, 42, 78, 0.6) 40%
+                    /* fade OUTWARD */
+                );
+            border-radius: 0.75rem;
+            mask-image: linear-gradient(to top, transparent 0%, black 10%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+
+            .achieve-heading {
+                display: flex;
+                position: relative;
+                justify-content: left;
+                margin: 0 0 1rem 0;
+                font-size: xx-large;
+                font-weight: 700;
+            }
+
+            .achieve-content {
+                display: flex;
+                justify-content: left;
+                margin: 1rem 0;
+                font-size: x-large;
+                font-weight: 700;
+            }
+        }
+
+        .achieve-image {
+            position: absolute;
+            right: 5%;
+
+            img {
+                width: 100%;
+                /* responsive width */
+                max-width: 500px;
+                /* limit size on large screens */
+                height: 70vh;
+                /* keep aspect ratio */
+            }
+        }
+    }
+
+    .achievement {
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
     .achievement-section {
         display: flex;
-        flex-direction: column;
-        border-bottom: 0.05rem solid rgb(43, 43, 43);
-        border-width: 80%;
-        padding: 3rem 0;
+        justify-content: space-between;
+        gap: 2rem;
 
-        /* Crescent gradient */
-        background: radial-gradient(circle at 10% 50%,
-                /* push to extreme edge */
-                rgba(2, 42, 78, 0) 10%,
-                /* strong at edge */
-                rgba(2, 42, 78, 0.3) 40%,
-                rgba(2, 42, 78, 0.6) 40%
-                /* fade OUTWARD */
-            );
-        border-radius: 0.75rem;
-        mask-image: linear-gradient(to top, transparent 0%, black 10%);
-        mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
+        width: 100%;
+        border-radius: 1rem;
+        overflow: hidden;
 
-        .achieve-heading {
-            display: flex;
-            justify-content: left;
-            margin: 0 0 1rem 0;
-            font-size: xx-large;
-            font-weight: 700;
-        }
-        .achieve-content {
-            display: flex;
-            justify-content: left;
-            margin: 1rem 0;
-            font-size: x-large;
-            font-weight: 700;
-        }
+        /* 🔥 RESPONSIVE CURVE */
+        background: radial-gradient(circle at 30% 50%,
+                #ffffff 35%,
+                rgba(2, 42, 78, 0.3) 36%,
+                rgba(2, 42, 78, 0.7) 100%);
     }
-    .achieve-image{
-        position: absolute;
-    right: 8rem;
-    top: 46rem;
-    }
-}
 
     .services {
         display: flex;
@@ -88,38 +121,45 @@
 
         .serv-heading {
             width: 100%;
-            font-size: 5ch;;
+            font-size: 5ch;
+            ;
             justify-content: center;
             font-weight: 700;
             margin: 1rem 0;
             padding: 1rem 0;
             display: flex;
-            span{
-                border-bottom: 0.25rem solid rgb(192, 173, 5) ;
+
+            span {
+                border-bottom: 0.25rem solid rgb(192, 173, 5);
             }
         }
 
         .serv-content {
             display: flex;
             flex-direction: column;
-            .serv-descrip{
+
+            .serv-descrip {
                 display: flex;
                 width: 100%;
                 justify-content: center;
                 font-size: large;
                 align-items: center;
-                span{
+
+                span {
                     width: 45%;
                 }
             }
+
             width: 100%;
         }
     }
-    .practises{
+
+    .practises {
         display: flex;
         flex-direction: column;
         margin: 1rem;
-        .prac-heading{
+
+        .prac-heading {
             margin: 4rem 0 3rem 0;
             font-size: 5ch;
             font-weight: 700;
@@ -127,25 +167,153 @@
             align-items: center;
             justify-content: center;
             display: flex;
-             span{
-                border-bottom: 0.25rem solid rgb(192, 173, 5) ;
+
+            span {
+                border-bottom: 0.25rem solid rgb(192, 173, 5);
             }
         }
-        .prac-content{
+
+        .prac-content {
             display: flex;
-           
-            .prac-item{
-                 width: 25%;
-            border: 0.25rem solid  #022a4e;;
-            font-size: x-large;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 700;
-            margin: 0 0.5rem;
-            height: 5rem;
+
+            .prac-item {
+                width: 25%;
+                border: 0.25rem solid #022a4e;
+                ;
+                font-size: x-large;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 700;
+                margin: 0 0.5rem;
+                height: 5rem;
             }
-            
+
         }
+    }
+}
+
+/* ================= RESPONSIVE FIX ================= */
+
+/* Tablet + Mobile */
+@media (max-width: 760px) {
+    .home {
+        width: 100%;
+    }
+
+    .home .intro {
+        flex-direction: column;
+        height: auto;
+        /* FIX */
+    }
+
+    .home .intro .tag-line {
+        width: 100%;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .home .intro .picture {
+        width: 100%;
+        -webkit-mask-image: none;
+        /* prevent cut gradient */
+        mask-image: none;
+    }
+
+    .home .intro .picture img {
+        height: auto;
+        /* FIX */
+    }
+
+    /* ================= ACHIEVEMENT ================= */
+
+    .home .achievement {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .home .achievement .achievement-section {
+        mask-image: linear-gradient(to bottom, transparent 0%, black 5%);
+        padding: 0;
+    }
+
+    /* REMOVE absolute positioning ONLY on small screens */
+    .home .achievement .achieve-image {
+        position: static;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .home .achievement .achieve-image img {
+        width: 90%;
+        height: auto;
+    }
+
+    /* ================= SERVICES ================= */
+
+    .home .services .serv-content .serv-descrip span {
+        width: 90%;
+        text-align: center;
+    }
+
+    /* ================= PRACTICES ================= */
+
+    .home .practises .prac-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home .practises .prac-content .prac-item {
+        width: 45%;
+        margin: 0.5rem;
+    }
+}
+
+
+/* ================= MOBILE ONLY ================= */
+
+@media (max-width: 600px) {
+    .home.intro {
+        mask-image: linear-gradient(to top, transparent 0%, black 20%);
+    }
+
+    .home .intro .heading .main-heading {
+        font-size: 1.5rem;
+    }
+
+    .home .intro .heading .sub-heading {
+        font-size: 1rem;
+    }
+
+
+    .home .achievement {
+        .achievement-section {
+            background: none;
+            /* REMOVE heavy gradient */
+            background: rgba(2, 42, 78, 0.6) 40%;
+            padding: 1.5rem 0;
+
+            .achieve-heading {
+                text-align: center;
+                font-size: 1.4rem;
+            }
+
+            .achieve-content {
+                font-size: 1rem;
+                justify-content: flex-start;
+            }
+
+            .achieve-image {
+                visibility: hidden;
+                display: none;
+            }
+        }
+
+    }
+
+
+    .home .practises .prac-content .prac-item {
+        width: 100%;
     }
 }

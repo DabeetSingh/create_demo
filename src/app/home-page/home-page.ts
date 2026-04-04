@@ -11,8 +11,19 @@ import { Services } from "../services/services";
 })
 export class HomePage {
 
-  practises= ["Sustainablility",
-"Project On Time","Modern Technology",
-"Latest Designs"
+  practises = ["Sustainablility",
+    "Project On Time", "Modern Technology",
+    "Latest Designs"
   ];
+
+  achievementData = {
+    heading: 'Building Trust Through Results:',
+    points: [
+      'Trusted By 200+ clients',
+      'Successfully delivered 500+ Projects',
+      '50+ Years of Excellence in Construction',
+      '1520+ Colleagues & counting more daily',
+      '1120+ Revenue in 2017 investment'
+    ]
+  };
 }
