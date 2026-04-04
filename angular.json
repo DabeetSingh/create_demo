@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "construct-proj": {
+    "create_demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -54,10 +54,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "construct-proj:build:production"
+              "buildTarget": "create_demo:build:production"
             },
             "development": {
-              "buildTarget": "construct-proj:build:development"
+              "buildTarget": "create_demo:build:development"
             }
           },
           "defaultConfiguration": "development"
