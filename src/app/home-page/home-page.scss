@@ -3,7 +3,7 @@
         height: 35rem;
         display: flex;
         width: 100%;
-        background-color: #022a4e;
+        background-color: #17334F;
         mask-image: linear-gradient(to top, transparent 0%, black 10%);
 
         .tag-line {
@@ -82,13 +82,14 @@
         .achieve-image {
             position: absolute;
             right: 5%;
+            margin: 0.5rem;
 
             img {
-                width: 100%;
+                width: 70vh;
                 /* responsive width */
-                max-width: 500px;
+                max-width: 30rem;
                 /* limit size on large screens */
-                height: 70vh;
+                 height: clamp(12.5rem,60dvh, 18.75rem);
                 /* keep aspect ratio */
             }
         }
@@ -178,7 +179,7 @@
 
             .prac-item {
                 width: 25%;
-                border: 0.25rem solid #022a4e;
+                border: 0.25rem solid #17334F;
                 ;
                 font-size: x-large;
                 display: flex;
