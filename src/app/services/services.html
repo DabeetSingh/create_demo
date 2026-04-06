@@ -1,9 +1,13 @@
 <div class="service_container">
     <div class="concrte_tab">
         @for(pics of folder; track $index ){
+            <div class="serice-describe">
         <div class="service_heading">
-            {{serviceHeading[$index]}}
+            {{serviceHeading[$index].title}}
         </div>
+       
+        <div class="serv-detail">{{serviceHeading[$index].description}}</div>
+         </div>
         <div class="serive_content">
             <div class="carousel-container">
                 <button class="nav-btn left" (click)="prev($index, pics)">&#10094;</button>

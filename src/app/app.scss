@@ -1,136 +1,156 @@
+/* ================= HEADER ================= */
+
 .header {
-    display: flex;
-    height: 6rem;
-    background-color: #17334f;
-    width: 100%;
-
-    .text {
-        display: flex;
-        align-items: center;
-        justify-content: left;
-        width: 50%;
-        color: white;
-        font-size: xx-large;
-        margin: 0 1rem;
-
-    }
-
-    .tabs {
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        width: 50%;
-        color: white;
-        font-size: large;
-
-        .tab-item {
-            margin: 0 1rem;
-            cursor: pointer;
-        }
-    }
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  background-color: #17334F;
+  width: 100%;
+  padding: 0 1rem;
 }
+
+/* LOGO / TEXT */
+.header .text {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* NAV TABS */
+.header .tabs {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 50%;
+  color: white;
+}
+
+.header .tabs .tab-item {
+  margin: 0 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT (Professional touch) */
+.header .tabs .tab-item:hover {
+  color: #EF7524;
+}
+
+/* ================= CONTENT ================= */
+
+.content {
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5F5;
+  min-height: 80vh;
+}
+
+/* ================= FOOTER ================= */
 
 .footer {
-    height: 20rem;
-    width: 100%;
-    background-color: #17334F;
-
-    .comp-detaiils {
-        .text {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            width: 50%;
-            color: white;
-            font-size: xx-large;
-            padding: 2rem;
-
-        }
-
-        .timing {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            width: 50%;
-            color: white;
-            font-size: larger;
-            padding: 0 2rem;
-        }
-    }
+  width: 100%;
+  background-color: #17334F;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: row;
 }
 
-/* ================= MOBILE ONLY ================= */
+.footer .comp-detaiils {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 33%;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .text {
+  color:#F5F5F5;
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  font-weight: 700;
+  font-size: xx-large;
+}
+
+.footer .timing {
+  color: #F5F5F5;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+/* ================= HAMBURGER ================= */
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: #F5F5F5;
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
-    .header {
-        display: flex;
-        height: 6rem;
-        background-color: #17334f;
-        width: 100%;
 
-        .text {
-            display: flex;
-            align-items: center;
-            justify-content: left;
-            width: 50%;
-            color: white;
-            font-size: xx-large;
-            margin: 1rem 1rem;
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.5rem 1rem;
+  }
 
-        }
+  .header .text {
+    width: 70%;
+    font-size: 1.4rem;
+  }
 
-        /* Show hamburger */
-        .menu-icon {
-            display: flex;
-            align-items: center;
-            justify-content: right;
-            width: 50%;
-            color: white;
-            font-size: large;
-        }
-    }
+  /* SHOW hamburger */
+  .menu-icon {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+  }
 
+  /* DROPDOWN MENU */
+  .header .tabs {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background-color: #17334F;
+    margin-top: 0.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
 
+  .header .tabs.active {
+    display: flex;
+  }
 
-    /* Adjust header layout */
-    .header {
-        flex-wrap: wrap;
-        height: 3.8rem;
-        border: none;
-    }
+  .header .tabs .tab-item {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
 
-    .header .text {
-        padding: 0 1rem;
-        width: 30%;
-        font-size: 1.5rem;
-    }
-
-    /* Hide tabs initially */
-    .header .tabs {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        background-color: #17334f;
-    }
-
-    /* Show dropdown when active */
-    .header .tabs.active {
-        display: flex;
-        z-index: 2;
-    }
-
-    .header .tabs .tab-item {
-        width: 100%;
-        text-align: center;
-        padding: 1rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-    }
+  /* FOOTER STACK */
+  .footer{ 
+    flex-direction: column;
+    .comp-detaiils {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+  }
 }
 
-/* ================= DESKTOP (NO CHANGE) ================= */
+/* ================= DESKTOP ================= */
 
-/* Hide hamburger on desktop */
 @media (min-width: 769px) {
-    .menu-icon {
-        display: none;
-    }
+  .menu-icon {
+    display: none;
+  }
 }

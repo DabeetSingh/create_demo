@@ -4,7 +4,7 @@
         display: flex;
         width: 100%;
         background-color: #17334F;
-        mask-image: linear-gradient(to top, transparent 0%, black 10%);
+        mask-image: linear-gradient(to top, transparent 0%, black 5%);
 
         .tag-line {
             width: 40%;
@@ -43,24 +43,30 @@
     .achievement {
         .achievement-section {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             border-bottom: 0.05rem solid rgb(43, 43, 43);
             border-width: 80%;
             padding: 3rem 0;
 
             /* Crescent gradient */
-            background: radial-gradient(circle at 10% 50%,
-                    /* push to extreme edge */
-                    rgba(2, 42, 78, 0) 10%,
-                    /* strong at edge */
-                    rgba(2, 42, 78, 0.3) 40%,
-                    rgba(2, 42, 78, 0.6) 40%
-                    /* fade OUTWARD */
-                );
-            border-radius: 0.75rem;
-            mask-image: linear-gradient(to top, transparent 0%, black 10%);
-            mask-image: linear-gradient(to bottom, transparent 0%, black 10%);
-
+              background:
+              radial-gradient(
+        circle at center,
+         #17334fa5 50%,        
+        #17334F 100%,
+        #236da285 100%,
+      ),
+               url('/assets/images/services_background.jpeg') ;
+            background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+            .achieve-text{
+                width: 50%;
+                align-items: center;
+                justify-content: center;
+                    flex-direction: column;
+    display: flex;
+                color: #f5f5f5;
             .achieve-heading {
                 display: flex;
                 position: relative;
@@ -76,7 +82,11 @@
                 margin: 1rem 0;
                 font-size: x-large;
                 font-weight: 700;
+                mat-icon{
+                    color: #ef7524;
+                }
             }
+        }
         }
 
         .achieve-image {
@@ -108,12 +118,6 @@
         width: 100%;
         border-radius: 1rem;
         overflow: hidden;
-
-        /* 🔥 RESPONSIVE CURVE */
-        background: radial-gradient(circle at 30% 50%,
-                #ffffff 35%,
-                rgba(2, 42, 78, 0.3) 36%,
-                rgba(2, 42, 78, 0.7) 100%);
     }
 
     .services {
@@ -131,25 +135,42 @@
             display: flex;
 
             span {
-                border-bottom: 0.25rem solid rgb(192, 173, 5);
+                padding: 1rem 2rem;
+                  background: 
+            radial-gradient(circle at top right,
+               #236da2 5%,        
+        #17334f 50%,
+        #17334f 80%,
+            );
+            color: #f5f5f5;
+              border-radius: 1rem;
+
+    /* subtle border */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+
+    /* 🔥 blur-like soft edge */
+    box-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+            
             }
+            
         }
+        
+
 
         .serv-content {
             display: flex;
             flex-direction: column;
+            background:  
+        
+         radial-gradient(
+        circle at center,
+         #f5f5f5a5 80%,        
+        #17334f58 100%,
+        #f5f5f551 100%,
+      ) ;
 
-            .serv-descrip {
-                display: flex;
-                width: 100%;
-                justify-content: center;
-                font-size: large;
-                align-items: center;
-
-                span {
-                    width: 45%;
-                }
-            }
 
             width: 100%;
         }
@@ -159,9 +180,42 @@
         display: flex;
         flex-direction: column;
         margin: 1rem;
+        background-color: #ef7524;
+          background: linear-gradient(
+    135deg,
+    #EF7524 0%,
+    #ff8a3d 40%,
+    #e5671f 100%
+  );
+  padding: 4rem 1rem;
+  overflow: hidden;
+  .practices::before,
+.practices::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  z-index: 0;
+}
+
+/* Top left soft shape */
+.practices::before {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: -100px;
+}
+
+/* Bottom right soft shape */
+.practices::after {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  right: -150px;
+}
 
         .prac-heading {
-            margin: 4rem 0 3rem 0;
+                margin: 1rem 0 2rem 0;
             font-size: 5ch;
             font-weight: 700;
             width: 100%;
@@ -170,7 +224,7 @@
             display: flex;
 
             span {
-                border-bottom: 0.25rem solid rgb(192, 173, 5);
+                border-bottom: 0.25rem solid #ef7524;
             }
         }
 
@@ -188,13 +242,18 @@
                 font-weight: 700;
                 margin: 0 0.5rem;
                 height: 5rem;
+                background-color: #f5f5f5;
             }
 
         }
     }
 }
 
-/* ================= RESPONSIVE FIX ================= */
+@media (max-width: 1080px) {
+    .home .achievement .achieve-image{
+        display: none;
+    }
+}
 
 /* Tablet + Mobile */
 @media (max-width: 760px) {
@@ -235,28 +294,23 @@
     }
 
     .home .achievement .achievement-section {
-        mask-image: linear-gradient(to bottom, transparent 0%, black 5%);
         padding: 0;
+        width: 100%;
+        .achieve-text{
+             width: 100%;
+                 align-items: baseline;
+
+        }
     }
 
     /* REMOVE absolute positioning ONLY on small screens */
     .home .achievement .achieve-image {
-        position: static;
-        margin-top: 2rem;
-        display: flex;
-        justify-content: center;
+       display: none;
     }
 
     .home .achievement .achieve-image img {
         width: 90%;
         height: auto;
-    }
-
-    /* ================= SERVICES ================= */
-
-    .home .services .serv-content .serv-descrip span {
-        width: 90%;
-        text-align: center;
     }
 
     /* ================= PRACTICES ================= */
@@ -291,10 +345,13 @@
 
     .home .achievement {
         .achievement-section {
-            background: none;
-            /* REMOVE heavy gradient */
-            background: rgba(2, 42, 78, 0.6) 40%;
+            width: 100%;
             padding: 1.5rem 0;
+            .achieve-text{
+             width: 100%;
+                 align-items: baseline;
+
+        }
 
             .achieve-heading {
                 text-align: center;

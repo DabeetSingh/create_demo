@@ -63,7 +63,23 @@ export class Services {
   ]
   currentIndex = [0, 0, 0, 0];
   folder = [this.imagConcrete, this.imgDeck, this.imgFence, this.imgMedia];
-  serviceHeading = ["Concrete", "Deck", "Fence", "Media Walls"];
+  serviceHeading = 
+  [{
+    title: "Concrete Work",
+    description:"We provide reliable and durable concrete solutions for driveways, floors, slabs, and other structural surfaces.Our work focuses on strength, precision, and a clean professional finish that lasts for years."
+  },
+ {
+  title: "Basement Renovation",
+  description: "Transform your basement into a functional and comfortable living space.We handle structural improvements, flooring, finishing, and modern upgrades to make your basement practical and visually appealing."
+ },
+ {
+  title: "Interior Work",
+  description: "Enhance the inside of your home with high-quality interior finishing.Our services include tile installation, plastering, painting, and detailed finishing that improves both appearance and durability."
+ },
+ {
+  title: "Exterior Work",
+  description: "Improve the look and protection of your property with professional exterior work.We handle wall repairs, surface finishing, and outdoor improvements designed to withstand weather and daily use."
+ }];
 
   getPosition(listIndex: number, i: number, imgArray: string[]) {
     const total = imgArray.length;
