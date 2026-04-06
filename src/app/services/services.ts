@@ -73,11 +73,11 @@ export class Services {
   description: "Transform your basement into a functional and comfortable living space.We handle structural improvements, flooring, finishing, and modern upgrades to make your basement practical and visually appealing."
  },
  {
-  title: "Interior Work",
+  title: "Exterior Work",
   description: "Enhance the inside of your home with high-quality interior finishing.Our services include tile installation, plastering, painting, and detailed finishing that improves both appearance and durability."
  },
  {
-  title: "Exterior Work",
+  title: "Interior Work",
   description: "Improve the look and protection of your property with professional exterior work.We handle wall repairs, surface finishing, and outdoor improvements designed to withstand weather and daily use."
  }];
 
