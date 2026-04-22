@@ -13,43 +13,47 @@
         margin-left: 1rem;
         align-items: center;
         justify-content: center;
-        .serice-describe{
+
+        .serice-describe {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 0.5rem;
             width: 70%;
-        .service_heading {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 700;
-            text-align: center;
-            margin: 2rem 0 1rem 0;
-            width: 50%;
-            background: radial-gradient(circle at bottom center,
-               #f5f5f5 70%,        
-        #17334f58 100%,
-        #17334f48 100%,
-            );
-            padding: 1rem 0;
-             border-radius: 1rem;
 
-    /* subtle border */
-    border: 2px solid rgba(255, 255, 255, 0.2);
+            .service_heading {
+                font-size: clamp(1.5rem, 3vw, 2.5rem);
+                font-weight: 700;
+                text-align: center;
+                margin: 2rem 0 1rem 0;
+                width: 50%;
+                  background:
+                    radial-gradient(circle at top right,
+                        #236da2 5%,
+                        #1E3A5F 50%,
+                        #1E3A5F 80%,
+                    );
+                color: #f5f5f5;
+                border-radius: 1rem;
 
-    /* 🔥 blur-like soft edge */
-    box-shadow: 
-        0 0 20px rgba(0, 0, 0, 0.2),
-        inset 0 0 20px rgba(255, 255, 255, 0.1);
+                /* subtle border */
+                border: 2px solid rgba(255, 255, 255, 0.2);
+
+                /* 🔥 blur-like soft edge */
+                box-shadow:
+                    0 0 20px rgba(0, 0, 0, 0.2),
+                    inset 0 0 20px rgba(255, 255, 255, 0.1);
+            }
+
+            .serv-detail {
+                font-size: clamp(1.5rem, 3vw, 2.5rem);
+                font-weight: 600;
+                text-align: center;
+                font-size: larger;
+                padding: 1rem 0;
+            }
         }
-        .serv-detail{
-             font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 600;
-            text-align: center;
-            font-size: larger;
-            padding: 1rem 0;
-        }
-    }
 
         .serive_content {
             width: 100%;
@@ -115,11 +119,11 @@
 }
 
 @media (max-width: 768px) {
-    .serice-describe{
-    .service_heading {
-        font-size: 2rem;
+    .serice-describe {
+        .service_heading {
+            font-size: 2rem;
+        }
     }
-}
 
     .carousel {
         height: 300px;
@@ -137,12 +141,12 @@
 }
 
 @media (max-width: 480px) {
-    .serice-describe{
-    .service_heading {
-        font-size: 1.5rem;
-        margin: 1.5rem 0;
+    .serice-describe {
+        .service_heading {
+            font-size: 1.5rem;
+            margin: 1.5rem 0;
+        }
     }
-}
 
     .carousel {
         height: 220px;

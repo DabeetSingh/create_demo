@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   height: 6rem;
-  background-color: #17334F;
+  background-color: #1E3A5F;
   width: 100%;
   padding: 0 1rem;
 }
@@ -53,7 +53,7 @@
 
 .footer {
   width: 100%;
-  background-color: #17334F;
+  background-color: #1E3A5F;
   padding: 2rem 1rem;
   display: flex;
   flex-direction: row;
@@ -70,7 +70,7 @@
 }
 
 .footer .text {
-  color:#F5F5F5;
+  color: #F5F5F5;
   font-size: 1.5rem;
   padding: 1rem 0;
   font-weight: 700;
@@ -120,9 +120,9 @@
     display: none;
     width: 100%;
     flex-direction: column;
-    background-color: #17334F;
+    background-color: #1E3A5F;
     margin-top: 0.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .header .tabs.active {
@@ -133,17 +133,18 @@
     width: 100%;
     text-align: center;
     padding: 1rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   /* FOOTER STACK */
-  .footer{ 
+  .footer {
     flex-direction: column;
+
     .comp-detaiils {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-  }
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+    }
   }
 }
 

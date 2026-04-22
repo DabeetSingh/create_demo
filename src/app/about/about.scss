@@ -5,33 +5,35 @@
     justify-content: center;
     align-items: center;
 
-    .main-about-heading{
-         display: flex;
+    .main-about-heading {
+        display: flex;
         justify-content: center;
         font-size: xx-large;
         font-weight: 700;
         align-items: center;
         padding: 2rem 0;
         width: 100%;
-        background:  radial-gradient(circle at top right,
-               #236da2 5%,        
-        #17334f 50%,
-        #17334f 80%,
+        background: radial-gradient(circle at top right,
+                #236da2 5%,
+                #1E3A5F 50%,
+                #1E3A5F 80%,
             );
-            color: #f5f5f5;
+        color: #f5f5f5;
 
-    /* subtle border */
-    border: 2px solid rgba(255, 255, 255, 0.2);
+        /* subtle border */
+        border: 2px solid rgba(255, 255, 255, 0.2);
 
-    /* 🔥 blur-like soft edge */
-    box-shadow: 
-        0 0 20px rgba(0, 0, 0, 0.2),
-        inset 0 0 20px rgba(255, 255, 255, 0.1);
-        span{
-             margin: 0 1rem;
+        /* 🔥 blur-like soft edge */
+        box-shadow:
+            0 0 20px rgba(0, 0, 0, 0.2),
+            inset 0 0 20px rgba(255, 255, 255, 0.1);
+
+        span {
+            margin: 0 1rem;
         }
 
     }
+
     .about-heading {
         display: flex;
         justify-content: center;

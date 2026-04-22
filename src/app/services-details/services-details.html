@@ -1,0 +1,31 @@
+<div class="service-detail">
+    <div [style.display]="'flex'" (click)="return()">
+        <mat-icon fontSet="material-symbols-outlined" class="menu-icon">keyboard_arrow_left</mat-icon>
+        Back
+    </div>
+    <div class="heading">
+       <span>{{sourceData.title}}</span>
+    </div>
+    <div class="description">
+        {{sourceData.list.describe}}
+    </div>
+    @if(sourceData.list.subtypes){
+        <div class="sub-types">
+            <span>Wide range of tasks that we handle:</span>
+            <ul>
+                @for (item of sourceData.list.subtypes; track $index) {
+                    <li>
+                        {{item}}
+                    </li>
+                 }
+            </ul>
+        </div>
+    }
+    <div class="gallery">
+        @for (item of sourceData.list.list; track $index) {
+              <img [src]="item" class="gallery-pic"/>
+        }
+
+    </div>
+
+</div>

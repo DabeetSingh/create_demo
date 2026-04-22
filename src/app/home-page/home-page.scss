@@ -3,7 +3,7 @@
         height: 35rem;
         display: flex;
         width: 100%;
-        background-color: #17334F;
+        background-color: #1E3A5F;
         mask-image: linear-gradient(to top, transparent 0%, black 5%);
 
         .tag-line {
@@ -17,7 +17,7 @@
                 margin-left: 1rem;
 
                 .main-heading {
-                    font-size: xx-large;
+                    font-size: xxx-large;
                     color: white;
                 }
 
@@ -49,44 +49,46 @@
             padding: 3rem 0;
 
             /* Crescent gradient */
-              background:
-              radial-gradient(
-        circle at center,
-         #17334fa5 50%,        
-        #17334F 100%,
-        #236da285 100%,
-      ),
-               url('../../assets/images/services_background.jpeg') ;
+            background:
+                radial-gradient(circle at center,
+                    #17334fa5 50%,
+                    #17334F 100%,
+                    #236da285 100%,
+                ),
+                url('../../assets/images/services_background.jpeg');
             background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-            .achieve-text{
+            background-position: center;
+            background-repeat: no-repeat;
+
+            .achieve-text {
                 width: 50%;
                 align-items: center;
                 justify-content: center;
-                    flex-direction: column;
-    display: flex;
+                flex-direction: column;
+                display: flex;
                 color: #f5f5f5;
-            .achieve-heading {
-                display: flex;
-                position: relative;
-                justify-content: left;
-                margin: 0 0 1rem 0;
-                font-size: xx-large;
-                font-weight: 700;
-            }
 
-            .achieve-content {
-                display: flex;
-                justify-content: left;
-                margin: 1rem 0;
-                font-size: x-large;
-                font-weight: 700;
-                mat-icon{
-                    color: #ef7524;
+                .achieve-heading {
+                    display: flex;
+                    position: relative;
+                    justify-content: left;
+                    margin: 0 0 1rem 0;
+                    font-size: xx-large;
+                    font-weight: 700;
+                }
+
+                .achieve-content {
+                    display: flex;
+                    justify-content: left;
+                    margin: 1rem 0;
+                    font-size: x-large;
+                    font-weight: 700;
+
+                    mat-icon {
+                        color: #ef7524;
+                    }
                 }
             }
-        }
         }
 
         .achieve-image {
@@ -99,7 +101,7 @@
                 /* responsive width */
                 max-width: 30rem;
                 /* limit size on large screens */
-                 height: clamp(12.5rem,60dvh, 18.75rem);
+                height: clamp(10.5rem, 40dvh, 16.75rem);
                 /* keep aspect ratio */
             }
         }
@@ -136,40 +138,39 @@
 
             span {
                 padding: 1rem 2rem;
-                  background: 
-            radial-gradient(circle at top right,
-               #236da2 5%,        
-        #17334f 50%,
-        #17334f 80%,
-            );
-            color: #f5f5f5;
-              border-radius: 1rem;
+                background:
+                    radial-gradient(circle at top right,
+                        #236da2 5%,
+                        #1E3A5F 50%,
+                        #1E3A5F 80%,
+                    );
+                color: #f5f5f5;
+                border-radius: 1rem;
 
-    /* subtle border */
-    border: 2px solid rgba(255, 255, 255, 0.2);
+                /* subtle border */
+                border: 2px solid rgba(255, 255, 255, 0.2);
 
-    /* 🔥 blur-like soft edge */
-    box-shadow: 
-        0 0 20px rgba(0, 0, 0, 0.2),
-        inset 0 0 20px rgba(255, 255, 255, 0.1);
-            
+                /* 🔥 blur-like soft edge */
+                box-shadow:
+                    0 0 20px rgba(0, 0, 0, 0.2),
+                    inset 0 0 20px rgba(255, 255, 255, 0.1);
+
             }
-            
+
         }
-        
+
 
 
         .serv-content {
             display: flex;
             flex-direction: column;
-            background:  
-        
-         radial-gradient(
-        circle at center,
-         #f5f5f5a5 80%,        
-        #17334f58 100%,
-        #f5f5f551 100%,
-      ) ;
+            background:
+
+                radial-gradient(circle at center,
+                    #f5f5f5a5 80%,
+                    #17334f58 100%,
+                    #f5f5f551 100%,
+                );
 
 
             width: 100%;
@@ -180,51 +181,63 @@
         display: flex;
         flex-direction: column;
         margin: 1rem;
-        background-color: #ef7524;
-          background: linear-gradient(
-    135deg,
-    #EF7524 0%,
-    #ff8a3d 40%,
-    #e5671f 100%
-  );
-  padding: 4rem 1rem;
-  overflow: hidden;
-  .practices::before,
-.practices::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  z-index: 0;
-}
+       
+        padding: 4rem 1rem;
+        overflow: hidden;
 
-/* Top left soft shape */
-.practices::before {
-  width: 400px;
-  height: 400px;
-  top: -100px;
-  left: -100px;
-}
+        .practices::before,
+        .practices::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            z-index: 0;
+        }
 
-/* Bottom right soft shape */
-.practices::after {
-  width: 500px;
-  height: 500px;
-  bottom: -150px;
-  right: -150px;
-}
+        /* Top left soft shape */
+        .practices::before {
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -100px;
+        }
+
+        /* Bottom right soft shape */
+        .practices::after {
+            width: 500px;
+            height: 500px;
+            bottom: -150px;
+            right: -150px;
+        }
 
         .prac-heading {
-                margin: 1rem 0 2rem 0;
+            margin: 1rem 0 2rem 0;
             font-size: 5ch;
             font-weight: 700;
             width: 100%;
             align-items: center;
             justify-content: center;
             display: flex;
+            
+                color: #f5f5f5;
 
             span {
-                border-bottom: 0.25rem solid #ef7524;
+                 background:
+                    radial-gradient(circle at top right,
+                        #236da2 5%,
+                        #1E3A5F 50%,
+                        #1E3A5F 80%,
+                    );
+                    padding: 1rem;
+                  border-radius: 1rem;
+
+                /* subtle border */
+                border: 2px solid rgba(255, 255, 255, 0.2);
+
+                /* 🔥 blur-like soft edge */
+                box-shadow:
+                    0 0 20px rgba(0, 0, 0, 0.2),
+                    inset 0 0 20px rgba(255, 255, 255, 0.1);
             }
         }
 
@@ -233,7 +246,7 @@
 
             .prac-item {
                 width: 25%;
-                border: 0.25rem solid #17334F;
+                border: 0.25rem solid #1E3A5F;
                 ;
                 font-size: x-large;
                 display: flex;
@@ -242,7 +255,12 @@
                 font-weight: 700;
                 margin: 0 0.5rem;
                 height: 5rem;
-                background-color: #f5f5f5;
+                 background-color: #ef7524;
+        background: linear-gradient(135deg,
+                #EF7524 0%,
+                #ff8a3d 40%,
+                #e5671f 100%);
+                color: #f5f5f5;
             }
 
         }
@@ -250,7 +268,7 @@
 }
 
 @media (max-width: 1080px) {
-    .home .achievement .achieve-image{
+    .home .achievement .achieve-image {
         display: none;
     }
 }
@@ -296,16 +314,17 @@
     .home .achievement .achievement-section {
         padding: 0;
         width: 100%;
-        .achieve-text{
-             width: 100%;
-                 align-items: baseline;
+
+        .achieve-text {
+            width: 100%;
+            align-items: baseline;
 
         }
     }
 
     /* REMOVE absolute positioning ONLY on small screens */
     .home .achievement .achieve-image {
-       display: none;
+        display: none;
     }
 
     .home .achievement .achieve-image img {
@@ -347,11 +366,12 @@
         .achievement-section {
             width: 100%;
             padding: 1.5rem 0;
-            .achieve-text{
-             width: 100%;
-                 align-items: baseline;
 
-        }
+            .achieve-text {
+                width: 100%;
+                align-items: baseline;
+
+            }
 
             .achieve-heading {
                 text-align: center;

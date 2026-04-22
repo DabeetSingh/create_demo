@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Tasks } from '../tasks';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-services',
@@ -8,6 +10,16 @@ import { Component } from '@angular/core';
   styleUrl: './services.scss',
 })
 export class Services {
+  constructor(public task: Tasks, public router: Router){
+
+  }
+showDetails(arg: any) {
+  console.log("abc");
+  
+ this.task.setTopic(arg.title, arg.topic);
+ this.router.navigate(['../service-details']);
+
+}
 
   imagConcrete = [
     'assets/images/concrete_1.jpeg',
@@ -17,69 +29,55 @@ export class Services {
 
     'assets/images/concrete_4.jpeg',
 
-    'assets/images/concrete_5.jpeg',
-    'assets/images/concrete_6.jpeg'
+    'assets/images/concrete_5.jpeg'
   ];
 
   imgDeck = [
-    ' assets/images/Deck_1.jpeg',
-    'assets/images/Deck_2.jpeg',
-    'assets/images/Deck_3.jpeg',
-    'assets/images/Deck_4.jpeg',
-    'assets/images/Deck_5.jpeg',
-    'assets/images/Deck_6.jpeg',
-    'assets/images/Deck_7.jpeg',
-    'assets/images/Deck_8.jpeg',
-    'assets/images/Deck_9.jpeg',
-    'assets/images/Deck_10.jpeg',
-    'assets/images/Deck_11.jpeg',
-    'assets/images/Deck_12.jpeg'
+    'assets/images/interiorandbase1.1.jpeg',
+    'assets/images/interiorandbase1.2.jpeg',
+    'assets/images/interiorandbase1.3.jpeg',
+    'assets/images/interiorandbase1.4.jpeg',
+    'assets/images/interiorandbase1.5.jpeg',
   ];
 
   imgFence = [
-    ' assets/images/Fence_1.jpeg',
+    'assets/images/Fence_1.jpeg',
     'assets/images/Fence_2.jpeg',
     'assets/images/Fence_3.jpeg',
     'assets/images/Fence_4.jpeg',
-    'assets/images/Fence_5.jpeg',
-    'assets/images/Fence_6.jpeg',
-    'assets/images/Fence_7.jpeg',
-    'assets/images/Fence_8.jpeg',
-    'assets/images/Fence_9.jpeg'
+    'assets/images/Fence_5.jpeg'
   ]
 
   imgMedia = [
     'assets/images/Media_1.jpeg',
     'assets/images/Media_2.jpeg',
     'assets/images/Media_3.jpeg',
-    'assets/images/Media_4.jpeg',
-    'assets/images/Media_6.jpeg',
-    'assets/images/Media_7.jpeg',
-    'assets/images/Media_8.jpeg',
-    'assets/images/Media_9.jpeg',
-    'assets/images/Media_10.jpeg',
-    'assets/images/Media_11.jpeg',
-    'assets/images/Media_12.jpeg',
+      'assets/images/interior1.1.jpeg',
+    'assets/images/interior1.2.jpeg',
   ]
   currentIndex = [0, 0, 0, 0];
   folder = [this.imagConcrete, this.imgDeck, this.imgFence, this.imgMedia];
-  serviceHeading = 
-  [{
-    title: "Concrete Work",
-    description:"We provide reliable and durable concrete solutions for driveways, floors, slabs, and other structural surfaces.Our work focuses on strength, precision, and a clean professional finish that lasts for years."
-  },
- {
-  title: "Basement Renovation",
-  description: "Transform your basement into a functional and comfortable living space.We handle structural improvements, flooring, finishing, and modern upgrades to make your basement practical and visually appealing."
- },
- {
-  title: "Exterior Work",
-  description: "Enhance the inside of your home with high-quality interior finishing.Our services include tile installation, plastering, painting, and detailed finishing that improves both appearance and durability."
- },
- {
-  title: "Interior Work",
-  description: "Improve the look and protection of your property with professional exterior work.We handle wall repairs, surface finishing, and outdoor improvements designed to withstand weather and daily use."
- }];
+  serviceHeading =
+    [{
+      title: "Concrete Work",
+      description: "We provide reliable and durable concrete solutions for driveways, floors, slabs, and other structural surfaces.Our work focuses on strength, precision, and a clean professional finish that lasts for years.",
+      topic: "concrete"
+    },
+    {
+      title: "Basement Renovation",
+      description: "Transform your basement into a functional and comfortable living space.We handle structural improvements, flooring, finishing, and modern upgrades to make your basement practical and visually appealing.",
+      topic: "basement"
+    },
+    {
+      title: "Exterior Work",
+      description: "Enhance the inside of your home with high-quality interior finishing.Our services include tile installation, plastering, painting, and detailed finishing that improves both appearance and durability.",
+      topic: "exterior"
+    },
+    {
+      title: "Interior Work",
+      description: "Improve the look and protection of your property with professional exterior work.We handle wall repairs, surface finishing, and outdoor improvements designed to withstand weather and daily use.",
+      topic: "interior"
+    }];
 
   getPosition(listIndex: number, i: number, imgArray: string[]) {
     const total = imgArray.length;

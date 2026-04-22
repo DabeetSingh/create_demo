@@ -21,9 +21,8 @@ export class HomePage {
     points: [
       'Trusted By 200+ clients',
       'Successfully delivered 500+ Projects',
-      '50+ Years of Excellence in Construction',
-      '1520+ Colleagues & counting more daily',
-      '1120+ Revenue in 2017 investment'
+      '9+ Years of Excellence in Construction',
+      'Successfully delivered 500+ projects'
     ]
   };
 }
