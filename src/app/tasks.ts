@@ -35,7 +35,7 @@ export class Tasks {
     'assets/images/interior1.6.jpeg',
     'assets/images/interior1.7.jpeg',
    ],
-   subtypes: ["Concrete","Fence","Deck","Fence","Landscaping","Full garage package","Siding","Hardie","Lux panels"]
+   subtypes: ["Basement renovation","Full home renovation","Washroom renovation","Media walls","Accent walls","3D walls"]
   };
 
    exterior = {
@@ -69,7 +69,7 @@ export class Tasks {
     'assets/images/Fence_8.jpeg',
     'assets/images/Fence_9.jpeg'
    ],
-   subtypes: ["Basement renovation","Full home renovation","Washroom renovation","Media walls","Accent walls","3D walls"]
+   subtypes: ["Concrete","Fence","Deck","Fence","Landscaping","Full garage package","Siding","Hardie","Lux panels"]
   }
 
    concrete= {
