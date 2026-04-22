@@ -2,7 +2,6 @@
     .intro {
         height: 35rem;
         display: flex;
-        width: 100%;
         background-color: #1E3A5F;
         mask-image: linear-gradient(to top, transparent 0%, black 5%);
 
@@ -105,11 +104,6 @@
                 /* keep aspect ratio */
             }
         }
-    }
-
-    .achievement {
-        width: 100%;
-        padding: 2rem 1rem;
     }
 
     .achievement-section {
