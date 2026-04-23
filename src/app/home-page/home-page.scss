@@ -255,6 +255,9 @@
                 #ff8a3d 40%,
                 #e5671f 100%);
                 color: #f5f5f5;
+                span{
+                    padding-left: 0.5rem;
+                }
             }
 
         }
@@ -264,6 +267,16 @@
 @media (max-width: 1080px) {
     .home .achievement .achieve-image {
         display: none;
+    }
+     .home .achievement .achievement-section {
+        width: 100%;
+
+        .achieve-text {
+            padding: 0 0 0 0.5rem;
+            width: 100%;
+            align-items: baseline;
+
+        }
     }
 }
 
@@ -287,9 +300,8 @@
 
     .home .intro .picture {
         width: 100%;
-        -webkit-mask-image: none;
-        /* prevent cut gradient */
-        mask-image: none;
+        -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 5%);
     }
 
     .home .intro .picture img {
@@ -347,7 +359,11 @@
         mask-image: linear-gradient(to top, transparent 0%, black 20%);
     }
 
-    .home .intro .heading .main-heading {
+    .home .intro .heading
+    img{
+            height: 315px;
+    }
+     .main-heading {
         font-size: 1.5rem;
     }
 
@@ -388,5 +404,6 @@
 
     .home .practises .prac-content .prac-item {
         width: 100%;
+        align-items: center;
     }
 }
