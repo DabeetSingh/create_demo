@@ -1,28 +1,33 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { Observable } from 'rxjs';
-import { Services } from "../services/services";
+import { Router, RouterLink } from '@angular/router';
+import { Tasks } from '../tasks';
+import { SERVICES, ServiceItem } from '../shared/service-data';
+import { SectionHeading } from '../shared/section-heading/section-heading';
+import { CtaBand } from '../shared/cta-band/cta-band';
+import { ServiceCard } from '../shared/service-card/service-card';
+import { Reveal } from '../shared/reveal.directive';
 
 @Component({
   selector: 'app-home-page',
-  imports: [MatIconModule, Services],
+  imports: [MatIconModule, RouterLink, SectionHeading, CtaBand, ServiceCard, Reveal],
   templateUrl: './home-page.html',
   styleUrl: './home-page.scss',
 })
 export class HomePage {
+  constructor(private task: Tasks, private router: Router) {}
 
-  practises = ["Sustainablility",
-    "Project On Time", "Modern Technology",
-    "Latest Designs"
+  services = SERVICES;
+
+  badges = [
+    { icon: 'workspace_premium', label: 'Quality Workmanship' },
+    { icon: 'schedule', label: 'On-Time Completion' },
+    { icon: 'construction', label: 'Durable Results' },
+    { icon: 'location_on', label: 'Local & Trusted in Calgary' },
   ];
 
-  achievementData = {
-    heading: 'Building Trust Through Results:',
-    points: [
-      'Trusted By 200+ clients',
-      'Successfully delivered 500+ Projects',
-      '9+ Years of Excellence in Construction',
-      'Successfully delivered 500+ projects'
-    ]
-  };
+  openService(service: ServiceItem) {
+    this.task.setTopic(service.title, service.topic);
+    this.router.navigate(['/service-details']);
+  }
 }

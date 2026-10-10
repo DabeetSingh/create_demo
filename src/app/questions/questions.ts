@@ -9,20 +9,23 @@ import { Component } from '@angular/core';
 export class Questions {
   faqs = [
     {
-      question: 'What is prompt payment legislation?',
-      answer: `Prompt payment legislation establishes mandatory time periods for issuing, disputing, and paying invoices in the construction industry.
-It creates a specialized scheme to adjudicate disputes over non-payment and payment amounts.
-The objectives include alleviating payment delays and project delays.`,
+      question: 'Do you provide free quotes?',
+      answer: 'Yes. We provide free, no-obligation quotes for all projects. Share a few details about your project and we will follow up with a clear estimate.',
       open: true
     },
     {
-      question: 'What are the key features of brampton prompt payment legislation?',
-      answer: 'The Brampton Construction Prompt Payment and Adjudication Act generally mirrors Ontario’s prompt payment legislation. It applies to almost every public and private construction contract, except if exempted by regulation. The Act aims to streamline payment processes and minimize delays throughout the construction pyramid1.',
+      question: 'How long does a project take?',
+      answer: 'Timelines depend on the scope of work. Small projects such as a sidewalk or patio are often completed in a few days, while larger driveways and foundations take one to two weeks. We always confirm a schedule up front.',
       open: false
     },
     {
-      question: 'What type of training and certifications do construction companies need?',
-      answer: 'Construction companies should have trained and certified staff in relevant areas such as safety, project management, and specialized skills.Certifications may include OSHA safety training, LEED accreditation, and trade-specific certifications.',
+      question: 'What areas do you service?',
+      answer: 'We proudly serve Calgary, Airdrie, Chestermere, Cochrane and the surrounding communities.',
+      open: false
+    },
+    {
+      question: 'Do you offer warranties?',
+      answer: 'Yes. We stand behind our workmanship and materials. Details of the warranty are explained clearly before any work begins.',
       open: false
     }
   ];

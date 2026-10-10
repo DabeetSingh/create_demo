@@ -1,35 +1,52 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { Tasks } from '../tasks';
 import { MatIconModule } from '@angular/material/icon';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Lightbox, LightboxImage } from '../shared/lightbox/lightbox';
 
 @Component({
   selector: 'app-services-details',
-  imports: [MatIconModule],
+  imports: [MatIconModule, RouterLink, Lightbox],
   templateUrl: './services-details.html',
   styleUrl: './services-details.scss',
 })
 export class ServicesDetails implements OnInit, OnDestroy {
 
   sourceData: any;
-  constructor(private task: Tasks, private router: Router){
+  activeIndex = signal<number | null>(null);
+  private sub?: Subscription;
 
-  }
+  constructor(private task: Tasks, private router: Router) {}
+
   ngOnDestroy(): void {
-    this.task.setTopic("", "");
-
+    this.sub?.unsubscribe();
+    this.task.setTopic('', '');
   }
+
   ngOnInit(): void {
-    this.task.getlist().subscribe((data)=>{
+    this.sub = this.task.getlist().subscribe((data) => {
       this.sourceData = data;
-      console.log();
-      
-      
-    })
+    });
+  }
+
+  get images(): LightboxImage[] {
+    const list: string[] = this.sourceData?.list?.list ?? [];
+    return list.map((src: string) => ({
+      src,
+      alt: `${this.sourceData?.title ?? 'Service'} project — ${src.split('/').pop()?.replace(/\.jpe?g$/i, '') ?? ''}`,
+    }));
+  }
+
+  openImage(index: number): void {
+    this.activeIndex.set(index);
+  }
+
+  closeImage(): void {
+    this.activeIndex.set(null);
   }
 
   return() {
-    this.router.navigate(["/"]);
-}
-  
+    this.router.navigate(['/']);
+  }
 }

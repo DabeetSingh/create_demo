@@ -1,0 +1,43 @@
+<section class="page-hero" [style.background-image]="'url(assets/images/exterior_main.jpeg)'">
+  <div class="container">
+    <h1>Our Process</h1>
+    <p>Simple. Transparent. Hassle-Free.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <ol class="steps">
+      @for (step of steps; track step.num) {
+        <li class="step">
+          <span class="step-num">{{ step.num }}</span>
+          <img class="step-img" [src]="step.image" [alt]="step.title" loading="lazy" />
+          <div class="step-body">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.text }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-heading eyebrow="Built for Lasting Results" title="Why Our Process Works"
+      subtitle="Our streamlined process ensures a smooth experience from start to finish, with no surprises along the way."></app-section-heading>
+    <div class="grid grid-4">
+      @for (benefit of benefits; track benefit.title) {
+        <div class="benefit card">
+          <mat-icon>{{ benefit.icon }}</mat-icon>
+          <h4>{{ benefit.title }}</h4>
+          <p>{{ benefit.text }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<app-cta-band title="Ready to Start Your Project?"
+  text="Contact us today for a free consultation and quote."
+  buttonLabel="Get a Quote" link="/contact"></app-cta-band>

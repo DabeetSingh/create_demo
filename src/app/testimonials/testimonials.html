@@ -1,0 +1,32 @@
+<section class="page-hero" [style.background-image]="'url(assets/images/interior_main.jpeg)'">
+  <div class="container">
+    <h1>What Our Clients Say</h1>
+    <p>Trusted by Homeowners and Businesses Across Calgary.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid-2">
+    @for (item of testimonials; track item.name) {
+      <figure class="testimonial card">
+        <img class="t-img" [src]="item.image" [alt]="item.name + ' — completed project'" loading="lazy" />
+        <div class="t-body">
+          <div class="stars">
+            @for (star of stars(item.rating); track star) {
+              <mat-icon>star</mat-icon>
+            }
+          </div>
+          <blockquote>“{{ item.quote }}”</blockquote>
+          <figcaption>
+            <strong>{{ item.name }}</strong>
+            <span>— {{ item.city }}</span>
+          </figcaption>
+        </div>
+      </figure>
+    }
+  </div>
+</section>
+
+<app-cta-band title="Be Our Next Success Story"
+  text="Join our growing list of satisfied clients across Calgary and surrounding areas."
+  buttonLabel="Get a Quote" link="/contact"></app-cta-band>

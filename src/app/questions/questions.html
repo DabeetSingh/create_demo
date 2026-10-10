@@ -1,27 +1,24 @@
 <div class="accordion">
-    <div class="ques-title">
-        FAQs
+  <h2 class="ques-title" id="faq-heading">Frequently Asked Questions</h2>
 
-    </div>
-    @for( item of faqs; track $index){
+  @for (item of faqs; track $index; let i = $index) {
     <div class="accordion-item">
+      <h3 class="accordion-title">
+        <button class="accordion-header" type="button" (click)="toggle(i)"
+          [attr.aria-expanded]="item.open"
+          [attr.aria-controls]="'faq-panel-' + i"
+          [attr.id]="'faq-button-' + i">
+          <span>{{ item.question }}</span>
+          <span class="icon" aria-hidden="true">{{ item.open ? '−' : '+' }}</span>
+        </button>
+      </h3>
 
-        <!-- HEADER -->
-        <div class="accordion-header" (click)="toggle($index)">
-            <span>{{ item.question }}</span>
-            <span class="icon">
-                {{ item.open ? '−' : '+' }}
-            </span>
+      @if (item.open) {
+        <div class="accordion-body" [attr.id]="'faq-panel-' + i"
+          [attr.role]="'region'" [attr.aria-labelledby]="'faq-button-' + i">
+          <p>{{ item.answer }}</p>
         </div>
-
-        <!-- CONTENT -->
-        @if(item.open){
-        <div class="accordion-body">
-            <p>{{ item.answer }}</p>
-        </div>
-        }
-
+      }
     </div>
-    }
-
+  }
 </div>

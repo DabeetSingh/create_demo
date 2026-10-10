@@ -1,0 +1,46 @@
+<section class="page-hero" [style.background-image]="'url(assets/images/Main.jpeg)'">
+  <div class="container">
+    <h1>Our Projects</h1>
+    <p>Real Work. Real Results.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filters" role="group" aria-label="Filter projects by category">
+      @for (category of categories; track category) {
+        <button class="chip" type="button" [class.active]="active() === category"
+          [attr.aria-pressed]="active() === category"
+          (click)="setCategory(category)">{{ category }}</button>
+      }
+    </div>
+
+    <p class="result-count" aria-live="polite">
+      Showing {{ filtered().length }} of {{ gallery.length }} photos
+    </p>
+
+    <div class="gallery-grid">
+      @for (image of filtered(); track image.src; let i = $index) {
+        <button class="project" type="button" (click)="open(i)"
+          [attr.aria-label]="'View larger: ' + image.alt">
+          <img [src]="image.src" [alt]="image.alt" loading="lazy" />
+          <span class="project-overlay">
+            <mat-icon>zoom_in</mat-icon>
+            <span>{{ image.alt }}</span>
+          </span>
+        </button>
+      } @empty {
+        <p class="empty">No photos in this category yet.</p>
+      }
+    </div>
+  </div>
+</section>
+
+@if (activeIndex() !== null) {
+  <app-lightbox [images]="filtered()" [index]="activeIndex()!"
+    (closed)="close()"></app-lightbox>
+}
+
+<app-cta-band title="Have a Project in Mind?"
+  text="Let’s bring your vision to life. Get a free quote today."
+  buttonLabel="Get a Quote" link="/contact"></app-cta-band>

@@ -1,27 +1,44 @@
-<div class="service_container">
-    <div class="concrte_tab">
-        @for(pics of folder; track $index ){
-        <div class="serice-describe">
-            <div class="service_heading">
-                {{serviceHeading[$index].title}}
-            </div>
+<section class="page-hero"
+  [style.background-image]="'url(assets/images/services_background.jpeg)'">
+  <div class="container">
+    <h1>Our Services</h1>
+    <p>Reliable. Durable. Built for You.</p>
+  </div>
+</section>
 
-            <div class="serv-detail">{{serviceHeading[$index].description}} <a [style.color]="'#1E3A5F'" (click)="showDetails(serviceHeading[$index])">Explore More</a></div>
+<section class="section">
+  <div class="container">
+    <p class="intro">We provide a complete range of residential and commercial concrete services.
+      From driveways to custom designs, we deliver quality craftsmanship for every project.</p>
+
+    @for (service of services; track service.title; let odd = $odd) {
+      <article class="service-row" [class.reverse]="odd">
+        <div class="service-media">
+          <img [src]="service.image" [alt]="service.title" loading="lazy" />
         </div>
-        <div class="serive_content">
-            <div class="carousel-container">
-                <button class="nav-btn left" (click)="prev($index, pics)">&#10094;</button>
-
-                <div class="carousel">
-                    <div class="card" *ngFor="let img of pics; let i = index" [ngStyle]="getStyle($index, i, pics)">
-                        <img [src]="img" />
-                    </div>
-                </div>
-
-                <button class="nav-btn right" (click)="next($index, pics)">&#10095;</button>
-            </div>
+        <div class="service-body">
+          <h2><mat-icon class="service-icon">{{ service.icon }}</mat-icon>{{ service.title }}</h2>
+          <p>{{ service.description }}</p>
+          <ul class="feature-list">
+            @for (feature of service.features; track feature) {
+              <li><mat-icon>check_circle</mat-icon><span>{{ feature }}</span></li>
+            }
+          </ul>
+          <div class="service-actions">
+            <button class="btn btn-navy" type="button" (click)="openService(service)">
+              Explore Gallery
+            </button>
+            <a class="btn btn-ghost" routerLink="/projects">View Projects</a>
+            <button class="btn btn-primary" type="button" (click)="requestQuote(service)">
+              Request a Quote
+            </button>
+          </div>
         </div>
-        }
-    </div>
+      </article>
+    }
+  </div>
+</section>
 
-</div>
+<app-cta-band title="Need a Custom Solution?"
+  text="Let’s discuss your project and bring your vision to life."
+  buttonLabel="Get a Quote" link="/contact"></app-cta-band>

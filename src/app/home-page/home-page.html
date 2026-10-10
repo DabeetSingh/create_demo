@@ -1,50 +1,73 @@
-<div class="home">
-    <div class="intro">
-        <div class="tag-line">
-            <div class="heading">
-                     <img src="assets/images/logo_1.png" alt="design">
-            </div>
-        </div>
-        <div class="picture">
-            <img src="assets/images/concrete_1.7.jpeg" alt="design" height="545" width="550">
-        </div>
+<section class="hero"
+  [style.background-image]="'linear-gradient(0deg, rgba(18,40,66,.55), rgba(18,40,66,.55)), url(assets/images/Main.jpeg)'">
+  <div class="container hero-inner">
+    <span class="eyebrow">Calgary Concrete Experts</span>
+    <h1>Strong Foundations<br />Brighter Tomorrows</h1>
+    <p>High-quality concrete solutions for homes and businesses in Calgary.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" routerLink="/contact">Get a Quote</a>
+      <a class="btn btn-outline" routerLink="/projects">Our Work</a>
     </div>
-    <div class="achievement">
-        <div class="achievement-section">
-            <div class="achieve-text">
-                <div class="achieve-heading">
-                    {{achievementData.heading}}
-                </div>
-                @for (point of achievementData.points; track $index) {
-                <div class="achieve-content">
-                    <mat-icon fontSet="material-symbols-outlined">check</mat-icon>
-                    <span>{{ point }}</span>
-                </div>
-                }
-            </div>
+  </div>
+</section>
 
-            <div class="achieve-image">
-                <img src="assets/images/exterior_main.jpeg" alt="Demo" height="345" width="550">
-            </div>
+<section class="badges-section" appReveal>
+  <div class="container">
+    <div class="badge-row">
+      @for (badge of badges; track badge.label; let i = $index) {
+        <div class="badge" [appReveal]="i * 80">
+          <mat-icon>{{ badge.icon }}</mat-icon>
+          <span>{{ badge.label }}</span>
         </div>
+      }
     </div>
+  </div>
+</section>
 
-    <div class="services">
-        <div class="serv-content">
-            <app-services></app-services>
-        </div>
+<section class="section" appReveal>
+  <div class="container teaser-grid">
+    <div class="teaser-copy">
+      <span class="eyebrow">Who We Are</span>
+      <h2 class="section-title">We Build More Than Concrete. We Build Trust.</h2>
+      <p>At Shukrana Concrete, we serve homeowners and businesses with honesty, experience,
+        precision and a commitment to quality in every project — from driveways to patios,
+        sidewalks to foundations.</p>
+      <a class="btn btn-navy" routerLink="/about">Learn More</a>
     </div>
-    <div class="practises">
-        <div class="prac-heading">
-            <span>We Follow Best Practices</span>
-        </div>
-        <div class="prac-content">
-            @for(practise of practises; track $index){
-            <div class="prac-item">
-                <span>{{practise}}</span>
-            </div>
-            }
-        </div>
+    <div class="teaser-image">
+      <img src="assets/images/exterior_main.jpeg" alt="Concrete work by Shukrana Concrete" loading="lazy" />
+    </div>
+  </div>
+</section>
 
+<section class="section section--alt" appReveal>
+  <div class="container">
+    <app-section-heading eyebrow="What We Do" title="Our Services"
+      subtitle="Reliable. Durable. Built for you."></app-section-heading>
+    <div class="grid grid-3">
+      @for (service of services; track service.title) {
+        <app-service-card [title]="service.title" [image]="service.image"
+          (open)="openService(service)"></app-service-card>
+      }
     </div>
-</div>
+    <div class="center-action">
+      <a class="btn btn-navy" routerLink="/services">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<section class="gratitude-band" appReveal
+  [style.background-image]="'linear-gradient(90deg, rgba(18,40,66,.94), rgba(18,40,66,.55)), url(assets/images/concrete_1.6.jpeg)'">
+  <div class="container gratitude-inner">
+    <div class="gratitude-copy">
+      <h2>Built on Gratitude.<br />Driven by Quality.</h2>
+      <p>Our name, Shukrana, reflects our core values of hard work, integrity, and gratitude.
+        We are proud to serve Calgary and surrounding areas with concrete solutions you can rely on.</p>
+    </div>
+    <a class="btn btn-outline" routerLink="/about">Our Story</a>
+  </div>
+</section>
+
+<app-cta-band title="Let’s Build Something Great Together."
+  text="Get a free consultation and quote for your next concrete project."
+  buttonLabel="Get a Quote" link="/contact"></app-cta-band>

@@ -1,86 +1,110 @@
-<div class="header">
-  <div class="slider">
-    <!-- for mobile -->
-  </div>
-  <div class="text">
-    ਸ਼ੁਕਰਾਨਾ
-  </div>
-  @if(!isMobile){
-  <div class="tabs">
-    <div class="tab-item" routerLink="" routerLinkActive="true">
-      Home
-    </div>
-    <div class="tab-item" routerLink="/about" routerLinkActive="true">
-      About
-    </div>
-    <div class="tab-item" routerLink="/FAQs" routerLinkActive="true">
-      FAQs
-    </div>
-    <div class="tab-item" routerLink="/contact" routerLinkActive="true">
-      Contact Us
-    </div>
-  </div>
-  } @else {
-  <div class="menu-icon" (click)="toggleMenu()">
-    ☰
-  </div>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <div class="tabs" [class.active]="isMenuOpen">
-    <div class="tab-item">
-      <div routerLink="" routerLinkActive="true">
-        Home
-      </div>
-    </div>
-    <div class="tab-item">
-      <div routerLink="/about" routerLinkActive="true">
-        About
-      </div>
-    </div>
-    <div class="tab-item">
-      <div routerLink="/FAQs" routerLinkActive="true">
-        FAQs
-      </div>
-    </div>
-    <div class="tab-item">
-      <div routerLink="/contact" routerLinkActive="true">
-        Contact Us
-      </div>
-    </div>
+<header class="site-header">
+  <div class="container bar">
+    <a class="brand" routerLink="/">
+      <img src="assets/images/logo_only.png" alt="Shukrana Concrete" />
+      <span class="brand-text">
+        <strong>SHUKRANA</strong>
+        <small>Concrete Construction</small>
+      </span>
+    </a>
+
+    @if (!isMobile) {
+      <nav class="nav" aria-label="Main navigation">
+        @for (link of links; track link.path) {
+          <a class="nav-link" [routerLink]="link.path" routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: link.exact }">{{ link.label }}</a>
+        }
+      </nav>
+      <a class="btn btn-primary quote-btn" routerLink="/contact">Get a Quote</a>
+    } @else {
+      <button class="menu-icon" type="button" (click)="toggleMenu()"
+        [attr.aria-expanded]="isMenuOpen" aria-controls="mobile-nav"
+        [attr.aria-label]="isMenuOpen ? 'Close menu' : 'Open menu'">
+        <mat-icon>{{ isMenuOpen ? 'close' : 'menu' }}</mat-icon>
+      </button>
+      <nav id="mobile-nav" class="nav" [class.open]="isMenuOpen" aria-label="Main navigation">
+        @for (link of links; track link.path) {
+          <a class="nav-link" [routerLink]="link.path" routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: link.exact }"
+             (click)="isMenuOpen = false">{{ link.label }}</a>
+        }
+        <a class="btn btn-primary quote-btn" routerLink="/contact" (click)="isMenuOpen = false">Get a Quote</a>
+      </nav>
+    }
   </div>
-  }
-</div>
-<div class="content">
+</header>
+
+<main class="content" id="main-content">
   <router-outlet></router-outlet>
-</div>
+</main>
 
-<div class="footer">
-  <div class="comp-detaiils">
-    <img src="assets/images/logo_only.png" alt="design"  width="165"  height="195">
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="foot-brand">
+      <div class="brand">
+        <img src="assets/images/logo_only.png" alt="Shukrana Concrete" />
+        <span class="brand-text">
+          <strong>SHUKRANA</strong>
+          <small>Concrete Construction</small>
+        </span>
+      </div>
+      <p>High-quality concrete solutions for homes and businesses across Calgary and surrounding areas.</p>
+      <div class="socials">
+        <a class="social" href="#" aria-label="Facebook">f</a>
+        <a class="social" href="#" aria-label="Instagram">ig</a>
+        <a class="social" href="#" aria-label="YouTube">yt</a>
+        <a class="social" href="#" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
 
+    <div class="foot-col">
+      <h4>Quick Links</h4>
+      @for (link of footerLinks; track link.label) {
+        <a [routerLink]="link.path">{{ link.label }}</a>
+      }
+    </div>
+
+    <div class="foot-col">
+      <h4>Our Services</h4>
+      @for (service of footerServices; track service.label) {
+        <a [routerLink]="service.path">{{ service.label }}</a>
+      }
+    </div>
+
+    <div class="foot-col">
+      <h4>Contact Info</h4>
+      <p class="contact-line"><mat-icon>call</mat-icon><a href="tel:+16475729029">+1 647 572 9029</a></p>
+      <p class="contact-line"><mat-icon>mail</mat-icon><a href="mailto:shukranaconcrete2109@gmail.com">shukranaconcrete2109&#64;gmail.com</a></p>
+      <p class="contact-line"><mat-icon>location_on</mat-icon><span>60 Skyview Ranch Rd NE, Calgary, AB</span></p>
+      <p class="contact-line"><mat-icon>schedule</mat-icon><span>Mon - Sat: 8:00 - 17:30</span></p>
+    </div>
   </div>
 
-  <div class="comp-detaiils">
-    <div class="timing">
-      Timings:
-    </div>
-    <div class="timing">
-      Mon - Sat 8:00 - 17:30,
-    </div>
-    <div class="timing">
-      Sunday - CLOSED
+  <div class="footer-bottom">
+    <div class="container bottom-bar">
+      <span>&copy; 2024 Shukrana Concrete. All rights reserved.</span>
+      <span class="bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </span>
     </div>
   </div>
+</footer>
 
-  <div class="comp-detaiils">
-    <div class="text">
-      Contact Us:
-    </div>
-    <div class="timing">
-      phone - +1 647 572 9029
-    </div>
-    <div class="timing">
-      email - shukranaconcrete2109@gmail.com
-    </div>
-  </div>
-
-</div>
+<!-- Fixed quick-action bar for small screens -->
+<nav class="mobile-actions" aria-label="Quick actions">
+  <a class="mobile-action" href="tel:+16475729029">
+    <mat-icon>call</mat-icon>
+    <span>Call</span>
+  </a>
+  <a class="mobile-action" routerLink="/projects">
+    <mat-icon>photo_library</mat-icon>
+    <span>Our Work</span>
+  </a>
+  <a class="mobile-action accent" routerLink="/contact">
+    <mat-icon>request_quote</mat-icon>
+    <span>Get a Quote</span>
+  </a>
+</nav>

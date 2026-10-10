@@ -1,0 +1,9 @@
+<button class="service-card" type="button" (click)="open.emit()">
+  <span class="thumb">
+    <img [src]="image" [alt]="title" loading="lazy" />
+  </span>
+  <span class="body">
+    <span class="title">{{ title }}</span>
+    <span class="more">Learn More <mat-icon>arrow_forward</mat-icon></span>
+  </span>
+</button>

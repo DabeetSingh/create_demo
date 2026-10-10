@@ -1,100 +1,78 @@
-<div class="about-container">
-    <div class="main-about-heading">
-        <span> About Us: Shukrana Construction </span>
-    </div>
-    <div class="about-content">
-        Welcome to Shukrana Construction, where we build dreams from the ground up! With over a decade of experience,
-        our founder, Anmol, has been at the forefront of transforming architectural visions into reality. Let us take
-        you on a journey through our story, values, and commitment to excellence.
-    </div>
-    <div class="about-heading">
-        <span> Our Story </span>
-    </div>
-    <div class="about-content">
-        Shukrana Construction was born out of passion and a relentless pursuit of quality. Anmol, a seasoned
-        professional in the construction industry, envisioned a company that would not only construct buildings but also
-        create lasting impressions. Armed with a toolbox of expertise and a heart full of determination, he set out to
-        build more than structures—he aimed to build trust, relationships, and a legacy. </div>
-    <div class="about-heading">
-        <span>Our Vision </span>
-    </div>
-    <div class="about-content">
-        At Shukrana Construction, we don’t just see blueprints; we envision thriving communities, sustainable spaces,
-        and safe havens. Our vision is to be the cornerstone of progress, leaving an indelible mark on the landscape. We
-        believe that every brick laid, every beam erected, and every nail hammered contributes to a better tomorrow.
-    </div>
-    <div class="about-heading">
-        <span> Our Values </span>
-    </div>
-    <div class="about-content">
-        <ul>
-            <li>
-                Craftsmanship: We take pride in our workmanship. From intricate details to robust foundations, we ensure
-                that
-                every project reflects our commitment to excellence.
-            </li>
-            <li>
-                Integrity: Shukrana Construction operates with unwavering integrity. Our word is our bond, and
-                transparency is
-                our cornerstone. We build trust by delivering what we promise.
-            </li>
-            <li>
-                Collaboration: We believe in the power of collaboration. Our team, clients, and partners work together
-                seamlessly, pooling their expertise to create harmonious spaces.
-            </li>
-            <li>
-                Innovation: The construction industry evolves, and so do we. Shukrana Construction embraces innovation,
-                from
-                sustainable materials to cutting-edge techniques. We build for the future.
+<section class="page-hero" [style.background-image]="'url(assets/images/exterior_main.jpeg)'">
+  <div class="container">
+    <h1>About Us</h1>
+    <p>Rooted in Gratitude. Built to Last.</p>
+  </div>
+</section>
 
-            </li>
-            <li>
-                Community: Our projects aren’t just structures; they’re part of the community fabric. We engage with
-                local
-                stakeholders, respect the environment, and give back whenever we can.
-            </li>
-        </ul>
+<section class="section">
+  <div class="container grid grid-2 align-center">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2 class="section-title">About Shukrana Concrete</h2>
+      <p>Shukrana Concrete was founded on the values of hard work, integrity, and gratitude.
+        We take pride in delivering high-quality concrete solutions that stand the test of time.
+        Our commitment to excellence and customer satisfaction has made us a trusted name in
+        Calgary and surrounding areas.</p>
     </div>
-    <div class="about-heading">
-        <span>Our Services </span>
+    <div class="story-img">
+      <img src="assets/images/concrete_1.7.jpeg" alt="Shukrana Concrete project" />
     </div>
-    <div class="about-content">
-        Shukrana Construction offers a comprehensive range of services:
+  </div>
+</section>
 
-        <ul>
-            <li>
-                Residential Construction: From cozy homes to luxurious estates, we turn dreams into dwellings.
-            </li>
-            <li>
-                Commercial Spaces: Whether it’s an office building, retail center, or hospitality venue, we create
-                functional
-                and aesthetically pleasing environments.
-            </li>
-            <li>
-                Renovations and Remodeling: We breathe new life into existing spaces, enhancing functionality and
-                beauty.
-            </li>
-            <li>
-                Green Building: Shukrana Construction champions eco-friendly practices, minimizing our ecological
-                footprint.
-            </li>
-            <li>
-                Residential Construction: From cozy homes to luxurious estates, we turn dreams into dwellings.
-            </li>
-            <li>
-                Project Management: Our seasoned team ensures seamless execution, on-time delivery, and cost-effective
-                solutions.
-            </li>
-        </ul>
+<section class="values-strip">
+  <div class="container grid grid-4">
+    @for (value of values; track value.title) {
+      <div class="value-card">
+        <mat-icon>{{ value.icon }}</mat-icon>
+        <h4>{{ value.title }}</h4>
+        <p>{{ value.text }}</p>
+      </div>
+    }
+  </div>
+</section>
 
+<section class="section">
+  <div class="container grid grid-3">
+    @for (pillar of pillars; track pillar.title) {
+      <div class="pillar card">
+        <mat-icon>{{ pillar.icon }}</mat-icon>
+        <h3>{{ pillar.title }}</h3>
+        <p>{{ pillar.text }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="team-band"
+  [style.background-image]="'linear-gradient(90deg, rgba(18,40,66,.92), rgba(18,40,66,.60)), url(assets/images/concrete_1.5.jpeg)'">
+  <div class="container team-copy">
+    <h2>A Team That Cares</h2>
+    <p>We believe in building strong relationships with every client. Based on trust and respect.
+      Every project is handled with professionalism, attention to detail, and respect for your vision.</p>
+    <a class="btn btn-primary" routerLink="/contact">Meet Our Team</a>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <app-section-heading eyebrow="Why Us" title="Why Choose Shukrana Concrete?"
+      subtitle="Experience, quality and local knowledge you can rely on."></app-section-heading>
+    <div class="grid grid-4">
+      @for (item of whyChoose; track item.title) {
+        <div class="why card">
+          <mat-icon>{{ item.icon }}</mat-icon>
+          <h4>{{ item.title }}</h4>
+        </div>
+      }
     </div>
-    <div class="about-heading">
-        <span> Our Legacy </span>
-    </div>
-    <div class="about-content">
-        Shukrana Construction isn’t just about bricks and mortar; it’s about building a legacy. We invite you to be part
-        of our journey—to witness structures rise, communities thrive, and dreams take shape. Together, let’s build a
-        future that stands tall, just like our buildings.
-        <br><br>
-        Thank you for choosing Shukrana Construction. Let’s build something remarkable! 🏗️🌟
-    </div>
+  </div>
+</section>
+
+<section class="areas-band">
+  <div class="container">
+    <h2>Serving Calgary and Surrounding Areas</h2>
+    <p>Proudly serving Calgary, Airdrie, Chestermere, Cochrane and surrounding communities.</p>
+  </div>
+</section>

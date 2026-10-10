@@ -1,0 +1,11 @@
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div class="cta-copy">
+      <h2>{{ title }}</h2>
+      @if (text) {
+        <p>{{ text }}</p>
+      }
+    </div>
+    <a class="btn btn-primary" [routerLink]="link">{{ buttonLabel }}</a>
+  </div>
+</section>

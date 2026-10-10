@@ -1,31 +1,43 @@
-<div class="service-detail">
-    <div [style.display]="'flex'" (click)="return()">
-        <mat-icon fontSet="material-symbols-outlined" class="menu-icon">keyboard_arrow_left</mat-icon>
-        Back
-    </div>
-    <div class="heading">
-       <span>{{sourceData.title}}</span>
-    </div>
-    <div class="description">
-        {{sourceData.list.describe}}
-    </div>
-    @if(sourceData.list.subtypes){
-        <div class="sub-types">
-            <span>Wide range of tasks that we handle:</span>
-            <ul>
-                @for (item of sourceData.list.subtypes; track $index) {
-                    <li>
-                        {{item}}
-                    </li>
-                 }
-            </ul>
-        </div>
+<div class="service-detail container">
+  <button class="back" type="button" (click)="return()">
+    <mat-icon fontSet="material-symbols-outlined">keyboard_arrow_left</mat-icon>
+    Back
+  </button>
+
+  @if (sourceData) {
+    <header class="detail-head">
+      <h1>{{ sourceData.title }}</h1>
+      <p>{{ sourceData.list.describe }}</p>
+      <a class="btn btn-primary" routerLink="/contact"
+        [queryParams]="{ service: sourceData.title }">
+        Request a Quote
+      </a>
+    </header>
+
+    @if (sourceData.list.subtypes) {
+      <div class="sub-types">
+        <h3>Wide range of tasks that we handle</h3>
+        <ul class="chips">
+          @for (item of sourceData.list.subtypes; track $index) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
     }
-    <div class="gallery">
-        @for (item of sourceData.list.list; track $index) {
-              <img [src]="item" class="gallery-pic"/>
-        }
 
+    <div class="gallery">
+      @for (item of sourceData.list.list; track $index; let i = $index) {
+        <button class="gallery-thumb" type="button" (click)="openImage(i)"
+          [attr.aria-label]="'View larger image ' + (i + 1) + ' of ' + sourceData.list.list.length">
+          <img [src]="item" class="gallery-pic"
+            [alt]="sourceData.title + ' project ' + (i + 1)" loading="lazy" />
+        </button>
+      }
     </div>
 
+    @if (activeIndex() !== null) {
+      <app-lightbox [images]="images" [index]="activeIndex()!"
+        (closed)="closeImage()"></app-lightbox>
+    }
+  }
 </div>

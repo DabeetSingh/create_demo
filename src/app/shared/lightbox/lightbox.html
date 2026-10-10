@@ -1,0 +1,26 @@
+<div class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Image viewer"
+  id="lightbox-dialog" (click)="onBackdropClick($event)">
+  <button #closeBtn class="lb-btn lb-close" type="button" (click)="close()" aria-label="Close image viewer">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <button class="lb-btn lb-nav lb-prev" type="button" (click)="prev()"
+    [attr.aria-label]="'Previous image'" [disabled]="images.length < 2">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <figure class="lb-figure">
+    @if (current; as img) {
+      <img [src]="img.src" [alt]="img.alt" />
+      <figcaption>
+        <span class="lb-count">{{ index + 1 }} / {{ images.length }}</span>
+        <span class="lb-alt">{{ img.alt }}</span>
+      </figcaption>
+    }
+  </figure>
+
+  <button class="lb-btn lb-nav lb-next" type="button" (click)="next()"
+    [attr.aria-label]="'Next image'" [disabled]="images.length < 2">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

@@ -1,58 +1,132 @@
-<section class="contact-section">
-    <div class="container">
-
-        <!-- Heading -->
-        <h1 class="title">Contact Us</h1>
-        <p class="subtitle">
-            Ready to start your project? Get in touch with us today.
-        </p>
-
-        <!-- Contact Cards -->
-        <div class="card-grid">
-
-            <!-- Phone -->
-            <div class="card">
-                <p class="card-title">Call Us</p>
-                <p class="card-text">+1 647 572 9029</p>
-
-                <a href="tel:+16475729029" class="btn yellow">
-                    Call Now
-                </a>
-            </div>
-
-            <!-- WhatsApp -->
-            <div class="card">
-                <p class="card-title">WhatsApp</p>
-                <p class="card-text">Chat with our team</p>
-
-                <a href="https://wa.me/16475729029" target="_blank" class="btn green">
-                    Start Chat
-                </a>
-            </div>
-
-            <!-- Location -->
-            <div class="card">
-                <p class="card-title">Visit Us</p>
-                <p class="card-text">60 skyview ranch rd NE, Calgary</p>
-
-                <a href="https://maps.google.com?q=60+Skyview+Ranch+Rd+NE,+Calgary" target="_blank" class="btn dark">
-                    Get Directions
-                </a>
-            </div>
-
-        </div>
-
-        <!-- Enquiry CTA -->
-        <div class="cta-box">
-
-            <h2>Have a Project in Mind?</h2>
-            <p>Click below and our team will get back to you quickly.</p>
-
-            <button class="btn large yellow">
-                Send Enquiry
-            </button>
-
-        </div>
-
-    </div>
+<section class="page-hero" [style.background-image]="'url(assets/images/concrete_5.jpeg)'">
+  <div class="container">
+    <h1>Get in Touch</h1>
+    <p>Let’s Build Something Great Together.</p>
+  </div>
 </section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div class="quote-card card">
+      <h2>Request a Quote</h2>
+      <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="field">
+          <label for="fullName">Full Name *</label>
+          <input id="fullName" type="text" formControlName="fullName" placeholder="Full Name"
+            [attr.aria-invalid]="hasError('fullName')" aria-describedby="fullName-error" />
+          @if (hasError('fullName')) {
+            <span class="error" id="fullName-error" role="alert">Please enter your name.</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input id="email" type="email" formControlName="email" placeholder="Email Address"
+            [attr.aria-invalid]="hasError('email')" aria-describedby="email-error" />
+          @if (hasError('email')) {
+            <span class="error" id="email-error" role="alert">Please enter a valid email address.</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number *</label>
+          <input id="phone" type="tel" formControlName="phone" placeholder="Phone Number"
+            [attr.aria-invalid]="hasError('phone')" aria-describedby="phone-error" />
+          @if (hasError('phone')) {
+            <span class="error" id="phone-error" role="alert">Please enter your phone number.</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="service">Service Interested In *</label>
+          <select id="service" formControlName="service"
+            [attr.aria-invalid]="hasError('service')" aria-describedby="service-error">
+            <option value="">Select a service</option>
+            @for (service of services; track service) {
+              <option [value]="service">{{ service }}</option>
+            }
+          </select>
+          @if (hasError('service')) {
+            <span class="error" id="service-error" role="alert">Please choose a service.</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="address">Project Address</label>
+          <input id="address" type="text" formControlName="address" placeholder="Project Address" />
+        </div>
+
+        <div class="field">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" rows="4" formControlName="message"
+            placeholder="Tell us about your project..."></textarea>
+        </div>
+
+        <button class="btn btn-primary submit" type="submit" [disabled]="status() === 'sending'">
+          @if (status() === 'sending') {
+            <span class="spinner" aria-hidden="true"></span>
+            Sending…
+          } @else {
+            Send Message
+          }
+        </button>
+
+        @if (status() === 'success') {
+          <p class="success" role="status">
+            Thanks! Your email app should open with your message — press send and we’ll be in touch
+            shortly. Prefer to talk? Call <a href="tel:+16475729029">+1 647 572 9029</a>.
+          </p>
+        }
+        @if (status() === 'error') {
+          <p class="error-box" role="alert">
+            Something went wrong sending your enquiry. Please email
+            <a href="mailto:shukranaconcrete2109@gmail.com">shukranaconcrete2109&#64;gmail.com</a>
+            or call <a href="tel:+16475729029">+1 647 572 9029</a> instead.
+          </p>
+        }
+      </form>
+    </div>
+
+    <aside class="info-col">
+      <div class="info-item">
+        <mat-icon>call</mat-icon>
+        <div><strong>Phone</strong><a href="tel:+16475729029">+1 647 572 9029</a></div>
+      </div>
+      <div class="info-item">
+        <mat-icon>mail</mat-icon>
+        <div><strong>Email</strong><a href="mailto:shukranaconcrete2109@gmail.com">shukranaconcrete2109&#64;gmail.com</a></div>
+      </div>
+      <div class="info-item">
+        <mat-icon>location_on</mat-icon>
+        <div><strong>Address</strong><span>60 Skyview Ranch Rd NE, Calgary, AB</span></div>
+      </div>
+
+      <div class="map">
+        <iframe title="Shukrana Concrete location"
+          src="https://www.google.com/maps?q=60%20Skyview%20Ranch%20Rd%20NE%2C%20Calgary&output=embed"
+          loading="lazy"></iframe>
+      </div>
+
+      <div class="areas card">
+        <h4>Service Areas</h4>
+        <ul>
+          <li>Calgary</li>
+          <li>Airdrie</li>
+          <li>Chestermere</li>
+          <li>Cochrane</li>
+          <li>Surrounding Areas</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container faq-wrap">
+    <app-questions></app-questions>
+  </div>
+</section>
+
+<app-cta-band title="Have Questions?"
+  text="We’re here to help. Contact us today."
+  buttonLabel="Get a Quote" link="/contact"></app-cta-band>
